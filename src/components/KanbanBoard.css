@@ -1,0 +1,38 @@
+
+
+.kanban-board {
+    padding: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
+  .kanban-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    font-size: 2em;
+  }
+  
+  .controls {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .controls label {
+    margin-right: 10px;
+  }
+  
+  select {
+    padding: 5px;
+    font-size: 1em;
+  }
+  
+  .kanban-content {
+    display: flex;
+    gap: 20px;
+  }
+  
