@@ -25,13 +25,16 @@
 
 .title-row {
   display: flex;
-  align-items: center;
-  margin-bottom: 0; 
+  align-items: flex-start;
+  margin-bottom: 5px;
+  margin-top: 7px;
+  gap:0.6rem; 
 }
 
 .status-icon {
   width: 14px; 
   height: 14px;
+  margin-top: 0.8rem;
   margin-right: 8px;
   flex-shrink: 0;
 }
@@ -46,6 +49,8 @@
   font-weight: bold;
   margin: 0;
   padding-top: 14px ;
+  line-height:1.2;
+  display: inline-block;
 }
 
 .kanban-card-footer {
