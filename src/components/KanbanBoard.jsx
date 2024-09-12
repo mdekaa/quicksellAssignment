@@ -39,7 +39,7 @@ const KanbanBoard = ({ tickets, users, grouping, sorting }) => {
       if (sorting === 'title') {
         return a.title.localeCompare(b.title);
       } else if (sorting === 'priority') {
-        return a.priority - b.priority;
+        return b.priority - a.priority;
       }
       return 0;
     });

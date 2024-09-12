@@ -5,6 +5,20 @@ import downIcon from '../assets/down.svg';
 
 const KanbanHeader = ({ setGrouping, setSorting }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [selectedGrouping, setSelectedGrouping] = useState('status'); 
+  const [selectedSorting, setSelectedSorting] = useState('title'); 
+
+  const handleGroupingChange = (e) => {
+    const value = e.target.value;
+    setSelectedGrouping(value);
+    setGrouping(value);
+  };
+
+  const handleSortingChange = (e) => {
+    const value = e.target.value;
+    setSelectedSorting(value);
+    setSorting(value); 
+  };
 
   return (
     <header className="kanban-header">
@@ -23,7 +37,7 @@ const KanbanHeader = ({ setGrouping, setSorting }) => {
                 <div className="dropdown-group">
                   <label>Grouping:</label>
                   <div className="dropdown-options">
-                    <select onChange={(e) => setGrouping(e.target.value)}>
+                    <select value={selectedGrouping} onChange={handleGroupingChange}>
                       <option value="status">Status</option>
                       <option value="user">User</option>
                       <option value="priority">Priority</option>
@@ -33,7 +47,7 @@ const KanbanHeader = ({ setGrouping, setSorting }) => {
                 <div className="dropdown-group">
                   <label>Order:</label>
                   <div className="dropdown-options">
-                    <select onChange={(e) => setSorting(e.target.value)}>
+                    <select  value={selectedSorting} onChange={handleSortingChange}>
                       <option value="title">Title</option>
                       <option value="priority">Priority</option>
                     </select>
