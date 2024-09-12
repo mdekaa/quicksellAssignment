@@ -1,10 +1,10 @@
 .kanban-header {
   width: 100%;
-  padding: 5px 30px; /* Adjust padding if needed */
+  padding: 5px 30px; 
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   background-color: white;
-  color: black; /* Changed to black for better contrast */
-  box-sizing: border-box; /* Ensure padding is included in width */
+  color: black; 
+  box-sizing: border-box; 
 }
 
   
