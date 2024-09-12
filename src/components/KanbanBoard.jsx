@@ -12,8 +12,8 @@ import lowIcon from '../assets/low.svg';
 import todoIcon from '../assets/todo.svg';
 import inProgressIcon from '../assets/inprogress.svg';
 import doneIcon from '../assets/donejob.svg';
-import backlogIcon from "../assets/backlog.svg";
-import cancelIcon from '../assets/Cancelled.svg';
+import backlogIcon from "../assets/backlogtask.svg";
+import cancelIcon from '../assets/Cancelledtask.svg';
 
 const KanbanBoard = ({ tickets, users, grouping, sorting }) => {
   const priorityIcons = {
