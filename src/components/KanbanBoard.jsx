@@ -3,6 +3,7 @@ import KanbanColumn from './KanbanColumn';
 import './KanbanBoard.css';
 
 const KanbanBoard = ({ tickets, users, grouping, sorting }) => {
+  const priorityOrder = ['No Priority', 'Urgent', 'High', 'Medium', 'Low'];
 
   const groupByStatus = (tickets) => {
     return tickets.reduce((acc, ticket) => {
@@ -23,15 +24,14 @@ const KanbanBoard = ({ tickets, users, grouping, sorting }) => {
   };
 
   const groupByPriority = (tickets) => {
-    const priorities = ['No Priority', 'Low', 'Medium', 'High', 'Urgent'];
     return tickets.reduce((acc, ticket) => {
-      const priorityLabel = priorities[ticket.priority] || 'No Priority';
+      const priorities = ['No Priority', 'Low', 'Medium', 'High', 'Urgent'];
+      const priorityLabel = priorities[ticket.priority];
       if (!acc[priorityLabel]) acc[priorityLabel] = [];
       acc[priorityLabel].push(ticket);
       return acc;
     }, {});
   };
-
 
   const sortByPriority = (tickets) => {
     return [...tickets].sort((a, b) => b.priority - a.priority);
@@ -41,12 +41,20 @@ const KanbanBoard = ({ tickets, users, grouping, sorting }) => {
     return [...tickets].sort((a, b) => a.title.localeCompare(b.title));
   };
 
- 
   let groupedTickets = [];
   if (grouping === 'status') groupedTickets = groupByStatus(tickets);
   else if (grouping === 'user') groupedTickets = groupByUser(tickets);
   else if (grouping === 'priority') groupedTickets = groupByPriority(tickets);
 
+  // Sort the groups according to the defined priorityOrder
+  if (grouping === 'priority') {
+    groupedTickets = priorityOrder.reduce((acc, priority) => {
+      if (groupedTickets[priority]) {
+        acc[priority] = groupedTickets[priority];
+      }
+      return acc;
+    }, {});
+  }
 
   for (const group in groupedTickets) {
     groupedTickets[group] =

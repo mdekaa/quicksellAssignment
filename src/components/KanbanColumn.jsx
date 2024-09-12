@@ -20,7 +20,7 @@ const KanbanColumn = ({ group, tickets }) => {
   return (
     <div className="kanban-column">
       <div className="kanban-column-header">
-        <h3>{group}</h3>
+        <h4>{group}</h4>
         <div className="three-dot-menu">
           <img src={sortIcon} alt="Sort" />
           <div className="dropdown-content">

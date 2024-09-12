@@ -1,10 +1,16 @@
 .kanban-card {
-    background-color: #f8f9fa;
+  width: 20rem;
+    background-color: #fff;
     border-radius: 8px;
     padding: 16px;
     margin-bottom: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
+    margin-right:20rem;
+  }
+  .ticketid{
+    font-size : 16px;
+    color: #75736d;
   }
   
   .card-header {
@@ -45,7 +51,5 @@
     margin-top: 10px;
   }
   
-  .card-body p {
-    margin: 5px 0;
-  }
+ 
   
