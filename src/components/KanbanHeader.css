@@ -81,3 +81,14 @@
 .dropdown-group:last-of-type {
   margin-bottom: 0;
 }
+
+@media (max-width: 600px) {
+  .kanban-header {
+    width: 100%;
+    padding: 16px 20px;
+    background-color: white;
+    color: black;
+    box-sizing: border-box;
+    position: relative;
+  }
+}
