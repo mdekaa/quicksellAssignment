@@ -37,7 +37,7 @@ const App = () => {
   }, [grouping, sorting]);
 
   return (
-    <div className="kanban-board">
+    <div className="main">
       <KanbanHeader
         grouping={grouping}
         sorting={sorting}

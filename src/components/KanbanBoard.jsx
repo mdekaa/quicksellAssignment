@@ -2,15 +2,64 @@ import React from 'react';
 import KanbanColumn from './KanbanColumn';
 import './KanbanBoard.css';
 
+
+import noPriorityIcon from '../assets/no-priority.svg';
+import urgentIcon from '../assets/urgent.svg';
+import highIcon from '../assets/high.svg';
+import mediumIcon from '../assets/medium.svg';
+import lowIcon from '../assets/low.svg';
+
+import todoIcon from '../assets/to-do.svg';
+import inProgressIcon from '../assets/in-progress.svg';
+import doneIcon from '../assets/done.svg';
+import backlogIcon from "../assets/backlog.svg";
+import cancelIcon from '../assets/Cancelled.svg';
+
 const KanbanBoard = ({ tickets, users, grouping, sorting }) => {
-  const priorityOrder = ['No Priority', 'Urgent', 'High', 'Medium', 'Low'];
+  const priorityIcons = {
+    'No Priority': noPriorityIcon,
+    'Urgent': urgentIcon,
+    'High': highIcon,
+    'Medium': mediumIcon,
+    'Low': lowIcon
+  };
+
+  const statusIcons = {
+    'Todo': todoIcon,
+    'In progress': inProgressIcon,
+    
+    'Backlog': backlogIcon,
+    'Done': doneIcon,
+    'Cancel': cancelIcon,
+  };
+
+ 
+  const sortTickets = (tickets) => {
+    return tickets.slice().sort((a, b) => {
+      if (sorting === 'title') {
+        return a.title.localeCompare(b.title);
+      } else if (sorting === 'priority') {
+        return a.priority - b.priority;
+      }
+      return 0;
+    });
+  };
 
   const groupByStatus = (tickets) => {
-    return tickets.reduce((acc, ticket) => {
-      if (!acc[ticket.status]) acc[ticket.status] = [];
-      acc[ticket.status].push(ticket);
+   
+    const statuses = ['Todo', 'In progress', 'Done', 'Backlog', 'Cancel'];
+    const grouped = statuses.reduce((acc, status) => {
+      acc[status] = [];
       return acc;
     }, {});
+
+    tickets.forEach(ticket => {
+      if (grouped[ticket.status]) {
+        grouped[ticket.status].push(ticket);
+      }
+    });
+
+    return grouped;
   };
 
   const groupByUser = (tickets) => {
@@ -33,40 +82,28 @@ const KanbanBoard = ({ tickets, users, grouping, sorting }) => {
     }, {});
   };
 
-  const sortByPriority = (tickets) => {
-    return [...tickets].sort((a, b) => b.priority - a.priority);
-  };
-
-  const sortByTitle = (tickets) => {
-    return [...tickets].sort((a, b) => a.title.localeCompare(b.title));
-  };
 
   let groupedTickets = [];
   if (grouping === 'status') groupedTickets = groupByStatus(tickets);
   else if (grouping === 'user') groupedTickets = groupByUser(tickets);
   else if (grouping === 'priority') groupedTickets = groupByPriority(tickets);
 
-  // Sort the groups according to the defined priorityOrder
-  if (grouping === 'priority') {
-    groupedTickets = priorityOrder.reduce((acc, priority) => {
-      if (groupedTickets[priority]) {
-        acc[priority] = groupedTickets[priority];
-      }
-      return acc;
-    }, {});
-  }
 
-  for (const group in groupedTickets) {
-    groupedTickets[group] =
-      sorting === 'priority'
-        ? sortByPriority(groupedTickets[group])
-        : sortByTitle(groupedTickets[group]);
+  for (let group in groupedTickets) {
+    groupedTickets[group] = sortTickets(groupedTickets[group]);
   }
 
   return (
     <div className="kanban-content">
       {Object.keys(groupedTickets).map((group) => (
-        <KanbanColumn key={group} group={group} tickets={groupedTickets[group]} />
+        <KanbanColumn
+          key={group}
+          group={group}
+          tickets={groupedTickets[group]}
+          grouping={grouping}
+          priorityIcons={priorityIcons}
+          statusIcons={statusIcons}
+        />
       ))}
     </div>
   );

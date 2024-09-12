@@ -1,55 +1,73 @@
 .kanban-column {
-    background-color: #f1f1f1;
-    padding: 15px;
-    border-radius: 5px;
-    width: 300px;
-    margin-right: 2rem;
-   
-  }
+  background-color: #f1f1f1;
+  padding: 15px;
+  border-radius: 5px;
+  width: 230px;
+  margin-right: 2rem;
+}
+
+.status-icon-column {
+  height: 20px;
+  width: 20px;
+}
+
+.priority-icon {
+  height: 20px;
+  width: 20px;
+}
+
+.kanban-column-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  margin-bottom: 10px;
   
-  .kanban-column-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .three-dot-menu {
-    position: relative;
-    cursor: pointer;
-  }
-  
-  .three-dot-menu img {
-    width: 24px;
-    height: 24px;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 30px;
-    right: 0;
-    background-color: white;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 100; 
-  }
-  
- 
-  .three-dot-menu:hover .dropdown-content,
-  .dropdown-content:hover {
-    display: block;
-  }
-  
-  .dropdown-content button {
-    padding: 8px 12px;
-    display: block;
-    background: none;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    text-align: left;
-  }
-  
-  .dropdown-content button:hover {
-    background-color: #ddd;
-  }
-  
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-left img {
+  margin-right: 10px;
+}
+
+.header-left h4 {
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.header-right img {
+  width: 20px; 
+  height: 20px; 
+}
+
+.user-avatar {
+  width: 25px; 
+  height: 25px; 
+  border-radius: 50%; 
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.task-total{
+  font-size: 0.8rem;
+  color: #757575;
+}
+.task-name{
+  font-size: 0.8rem;
+  margin-right: 0.6rem;
+}
+
+
+
+
+
