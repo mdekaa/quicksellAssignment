@@ -1,7 +1,7 @@
 import React from 'react';
 import KanbanCard from './KanbanCard';
 import './KanbanColumn.css'; 
-import userAvatar from '../assets/magnus.jpg'; 
+import userAvatar from '../assets/magnus1.jpg'; 
 import addIcon from '../assets/add.svg'; 
 import sortIcon from '../assets/sort.svg'; 
 
