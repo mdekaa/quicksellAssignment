@@ -2,9 +2,8 @@
   background-color: #f1f1f1;
   padding: 15px;
   border-radius: 5px;
-  width: 230px; /* Default width for larger screens */
-  margin-bottom: 1rem; /* Add margin-bottom for stacking */
-  box-sizing: border-box;
+  width: 230px;
+  margin-right: 2rem;
 }
 
 .status-icon-column {
@@ -67,21 +66,11 @@
   font-size: 0.8rem;
   margin-right: 0.6rem;
 }
-@media (max-width: 1200px) {
-  .kanban-column {
-    width: calc(33.333% - 1rem); /* 3 columns */
-  }
-}
 
-@media (max-width: 900px) {
-  .kanban-column {
-    width: calc(50% - 0.5rem); /* 2 columns */
-  }
-}
 
 @media (max-width: 600px) {
   .kanban-column {
-    width: 100%; /* 1 column */
+    width: 91%; /* 1 column */
     margin-bottom: 1rem; /* Ensure spacing between stacked columns */
   }
 }
