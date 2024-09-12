@@ -3,14 +3,14 @@ import KanbanColumn from './KanbanColumn';
 import './KanbanBoard.css';
 
 
-import noPriorityIcon from '../assets/no-priority.svg';
+import noPriorityIcon from '../assets/nopriority.svg';
 import urgentIcon from '../assets/urgent.svg';
 import highIcon from '../assets/high.svg';
 import mediumIcon from '../assets/medium.svg';
 import lowIcon from '../assets/low.svg';
 
-import todoIcon from '../assets/to-do.svg';
-import inProgressIcon from '../assets/in-progress.svg';
+import todoIcon from '../assets/todo.svg';
+import inProgressIcon from '../assets/inprogress.svg';
 import doneIcon from '../assets/done.svg';
 import backlogIcon from "../assets/backlog.svg";
 import cancelIcon from '../assets/Cancelled.svg';

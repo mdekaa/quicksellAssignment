@@ -2,8 +2,8 @@ import React from 'react';
 import './KanbanCard.css';
 
 
-import todoIcon from '../assets/to-do.svg';
-import inProgressIcon from '../assets/in-progress.svg';
+import todoIcon from '../assets/todo.svg';
+import inProgressIcon from '../assets/inprogress.svg';
 import doneIcon from '../assets/done.svg';
 import backlogIcon from '../assets/backlog.svg';
 import tagIcon from '../assets/sort.svg';
