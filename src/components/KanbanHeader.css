@@ -9,6 +9,7 @@
 
 
 
+
 .dropdown {
   position: relative;
 }
@@ -48,12 +49,25 @@
   margin-bottom: 10px;
   display: flex;
   align-items: center;
+  font-size: 1rem;
 }
 
-.dropdown-group label {
+.dropdown-group p {
+  font-size: 1rem;
   margin-right: 10px;
-  font-weight: bold;
+  font-weight: 500;
   flex-shrink: 0;
+  color: #8a8584;
+}
+
+.orderSelect {
+  width: 50%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 0.9em;
+  margin-left: 3.9rem;
 }
 
 .dropdown-options {
@@ -61,13 +75,14 @@
   width: 150px;
 }
 
-.dropdown-options select {
-  width: 100%;
+.groupSelect {
+  width: 60%;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
   background-color: white;
   font-size: 0.9em;
+  margin-left: 2rem;
 }
 
 .dropdown:hover .dropdown-content {

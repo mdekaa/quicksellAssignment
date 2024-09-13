@@ -8,16 +8,22 @@ const KanbanHeader = ({ setGrouping, setSorting }) => {
   const [selectedGrouping, setSelectedGrouping] = useState('status'); 
   const [selectedSorting, setSelectedSorting] = useState('title'); 
 
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
+  };
+
   const handleGroupingChange = (e) => {
     const value = e.target.value;
     setSelectedGrouping(value);
     setGrouping(value);
+    setDropdownOpen(false); // close dropdown after selecting
   };
 
   const handleSortingChange = (e) => {
     const value = e.target.value;
     setSelectedSorting(value);
-    setSorting(value); 
+    setSorting(value);
+    setDropdownOpen(false); // close dropdown after selecting
   };
 
   return (
@@ -25,19 +31,24 @@ const KanbanHeader = ({ setGrouping, setSorting }) => {
       <nav className="navbar">
         <div className="navbar-controls">
           <div className="dropdown">
+          
             <button
               className="dropdown-button"
-              onClick={() => setDropdownOpen(!dropdownOpen)}
+              onClick={toggleDropdown}
+              aria-label="Toggle Display Options"
             >
-              <img className="displayicon" src={displayIcon} alt="Display" /> Display
-              <img className="downicon" src={downIcon} alt="down" />
+              <img className="displayicon" src={displayIcon} alt="Display" />
+              Display
+              <img className="downicon" src={downIcon} alt="down arrow" />
             </button>
+            
+         
             {dropdownOpen && (
               <div className="dropdown-content">
                 <div className="dropdown-group">
-                  <label>Grouping:</label>
+                  <p className='groupingText'>Grouping</p>
                   <div className="dropdown-options">
-                    <select value={selectedGrouping} onChange={handleGroupingChange}>
+                    <select className='groupSelect'value={selectedGrouping} onChange={handleGroupingChange}>
                       <option value="status">Status</option>
                       <option value="user">User</option>
                       <option value="priority">Priority</option>
@@ -45,9 +56,9 @@ const KanbanHeader = ({ setGrouping, setSorting }) => {
                   </div>
                 </div>
                 <div className="dropdown-group">
-                  <label>Order:</label>
+                  <p className='ordertext'>Order    </p>
                   <div className="dropdown-options">
-                    <select  value={selectedSorting} onChange={handleSortingChange}>
+                    <select className='orderSelect' value={selectedSorting} onChange={handleSortingChange}>
                       <option value="title">Title</option>
                       <option value="priority">Priority</option>
                     </select>

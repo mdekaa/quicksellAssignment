@@ -2,7 +2,7 @@
   background-color: #f1f1f1;
   padding: 15px;
   border-radius: 5px;
-  width: 230px;
+  width: 228px;
   margin-right: 2rem;
 }
 
@@ -20,8 +20,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px;
+  padding: ;
   margin-bottom: 10px;
+  width: 260px;
   
 }
 
@@ -42,7 +43,8 @@
 .header-right {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 9px;
+  
 }
 
 .header-right img {
@@ -63,7 +65,7 @@
   color: #757575;
 }
 .task-name{
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   margin-right: 0.6rem;
   font-weight: 500;
 }
@@ -73,6 +75,11 @@
   .kanban-column {
     width: 91%; /* 1 column */
     margin-bottom: 1rem; /* Ensure spacing between stacked columns */
+  }
+  .kanban-column-header {
+    
+    width: 98%;
+    
   }
 }
 
