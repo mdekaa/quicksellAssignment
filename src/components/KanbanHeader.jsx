@@ -16,14 +16,14 @@ const KanbanHeader = ({ setGrouping, setSorting }) => {
     const value = e.target.value;
     setSelectedGrouping(value);
     setGrouping(value);
-    setDropdownOpen(false); // close dropdown after selecting
+    setDropdownOpen(false); 
   };
 
   const handleSortingChange = (e) => {
     const value = e.target.value;
     setSelectedSorting(value);
     setSorting(value);
-    setDropdownOpen(false); // close dropdown after selecting
+    setDropdownOpen(false);
   };
 
   return (

@@ -35,19 +35,19 @@
   .kanban-content {
     display: flex;
     gap: 20px;
-    flex-wrap: nowrap; /* Ensure items do not wrap by default */
-    flex-direction: row; /* Default to row layout */
+    flex-wrap: nowrap;
+    flex-direction: row;
   }
   @media (max-width: 1200px) {
     .kanban-content {
       flex-direction: row;
-      flex-wrap: wrap; /* Allow wrapping for smaller screens */
+      flex-wrap: wrap; 
     }
   }
   
   @media (max-width: 600px) {
     .kanban-content {
-      flex-direction: column; /* Stack columns vertically on very small screens */
+      flex-direction: column; 
     }
   }
   

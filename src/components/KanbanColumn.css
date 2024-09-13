@@ -73,8 +73,8 @@
 
 @media (max-width: 600px) {
   .kanban-column {
-    width: 91%; /* 1 column */
-    margin-bottom: 1rem; /* Ensure spacing between stacked columns */
+    width: 91%; 
+    margin-bottom: 1rem;
   }
   .kanban-column-header {
     
